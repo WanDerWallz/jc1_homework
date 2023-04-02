@@ -1,4 +1,4 @@
-package Part1.Task1;
+package part1.task3;
 
 public class ILikeJava {
     public static void main(String[] args) {

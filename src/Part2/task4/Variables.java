@@ -1,4 +1,4 @@
-package Part2.Task1;
+package part2.task4;
 
 public class Variables {
     public static void main(String[] args) {

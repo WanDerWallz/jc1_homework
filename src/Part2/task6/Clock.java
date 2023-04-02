@@ -1,4 +1,4 @@
-package Part2.Task1;
+package part2.task6;
 
 public class Clock {
     public static void main(String[] args) {
