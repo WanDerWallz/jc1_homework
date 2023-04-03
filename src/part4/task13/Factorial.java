@@ -13,6 +13,5 @@ public class Factorial {
             System.out.println(factorial);
             i++;
         }
-        System.out.println(factorial);
     }
 }
