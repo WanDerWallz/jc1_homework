@@ -2,8 +2,8 @@ package part4.task14;
 
 public class Multiplication {
     public static void main(String[] args) {
-        int i = 1;
-        int multiplication = 1;
+        long i = 1L;
+        long multiplication = 1L;
         do {
             multiplication *= i;
             i++;
