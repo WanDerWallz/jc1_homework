@@ -4,6 +4,9 @@ public class ATM {
     private int quantityNom20;
     private int quantityNom50;
     private int quantityNom100;
+    final int capacityNom20 = 1000; //Пусть максимальное количество купюр каждого номинала, которое может вместить наш банкомат, будет равно 1000.
+    final int capacityNom50 = 1000;
+    final int capacityNom100 = 1000;
 
     public ATM() {
         quantityNom20 = 0;
@@ -12,27 +15,30 @@ public class ATM {
     }
 
     public int addMoneyNom20(int quantity) {
-        if (quantity < 0) {
+        if (quantity <= 0 || quantity > capacityNom20) {
             System.out.println("Невозможно добавить такую сумму денег.");
-            System.exit(1);
+            System.out.println("");
+            return  quantityNom20 = 0;
         }
         quantityNom20 += quantity;
         return quantityNom20;
     }
 
     public int addMoneyNom50(int quantity) {
-        if (quantity < 0) {
+        if (quantity <= 0 || quantity > capacityNom50) {
             System.out.println("Невозможно добавить такую сумму денег.");
-            System.exit(1);
+            System.out.println("");
+            return  quantityNom50 = 0;
         }
         quantityNom50 += quantity;
         return quantityNom50;
     }
 
     public int addMoneyNom100(int quantity) {
-        if (quantity < 0) {
+        if (quantity <= 0 || quantity > capacityNom100) {
             System.out.println("Невозможно добавить такую сумму денег.");
-            System.exit(1);
+            System.out.println("");
+            return  quantityNom100 = 0;
         }
         quantityNom100 += quantity;
         return quantityNom100;
@@ -57,7 +63,7 @@ public class ATM {
                     quantityNom20 -= c;
                     operationIsSuccess = true;
                     System.out.println(operationIsSuccess + " - операция удалась.");
-                    System.out.println("Было выдано: ");
+                    System.out.println("Сумма, которая была снята -  " + money + ". Было выдано: ");
                     System.out.println("Купюр номинала 100: " + a + ".");
                     System.out.println("Купюр номинала 50: 0.");
                     System.out.println("Купюр номинала 20: " + c + ".");
@@ -76,7 +82,7 @@ public class ATM {
                     quantityNom20 -= c;
                     operationIsSuccess = true;
                     System.out.println(operationIsSuccess + " - операция удалась.");
-                    System.out.println("Было выдано: ");
+                    System.out.println("Сумма, которая была снята -  " + money + ". Было выдано: ");
                     System.out.println("Купюр номинала 100: " + a + ".");
                     System.out.println("Купюр номинала 50: " + b + ".");
                     System.out.println("Купюр номинала 20: " + c + ".");
@@ -93,7 +99,7 @@ public class ATM {
                     quantityNom50 -= b;
                     operationIsSuccess = true;
                     System.out.println(operationIsSuccess + " - операция удалась.");
-                    System.out.println("Было выдано: ");
+                    System.out.println("Сумма, которая была снята -  " + money + ". Было выдано: ");
                     System.out.println("Купюр номинала 100: " + a + ".");
                     System.out.println("Купюр номинала 50: " + b + ".");
                     System.out.println("Купюр номинала 20: 0.");
