@@ -9,8 +9,8 @@ public class Time {
         this.hour = hour;
         this.min = min;
         this.sec = sec;
-        if (min > 60 || sec > 60) {
-            System.out.println("Количество секунд или минут введено неверно.");
+        if (min > 60 || sec > 60 || min < 0 || sec < 0 || hour < 0) {
+            System.out.println("Время введено неверно.");
             System.exit(1);
         }
     }
@@ -19,6 +19,10 @@ public class Time {
         hour = totalSec / 3600;
         min = (totalSec % 3600) / 60;
         sec = totalSec - hour * 3600 - min * 60;
+        if (totalSec < 0) {
+            System.out.println("Количество секунд введено неверно.");
+            System.exit(1);
+        }
     }
 
     public int getTotalSec() {

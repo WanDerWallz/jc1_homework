@@ -12,23 +12,35 @@ public class ATM {
     }
 
     public int addMoneyNom20(int quantity) {
-        quantityNom20 = quantityNom20 + quantity;
+        if (quantity < 0) {
+            System.out.println("Невозможно добавить такую сумму денег.");
+            System.exit(1);
+        }
+        quantityNom20 += quantity;
         return quantityNom20;
     }
 
     public int addMoneyNom50(int quantity) {
-        quantityNom50 = quantityNom50 + quantity;
+        if (quantity < 0) {
+            System.out.println("Невозможно добавить такую сумму денег.");
+            System.exit(1);
+        }
+        quantityNom50 += quantity;
         return quantityNom50;
     }
 
     public int addMoneyNom100(int quantity) {
-        quantityNom100 = quantityNom100 + quantity;
+        if (quantity < 0) {
+            System.out.println("Невозможно добавить такую сумму денег.");
+            System.exit(1);
+        }
+        quantityNom100 += quantity;
         return quantityNom100;
     }
 
     public int withdrawMoney(int money) {
         boolean operationIsSuccess;
-        if (money > quantityNom20 * 20 + quantityNom50 * 50 + quantityNom100 * 100 || money < 20 || (money >= 20 && money < 50 && money % 20 != 0) || (money >= 50 && (money % 10 != 0 || money % 100 == 10 || money % 100 == 30))) {
+        if (money > quantityNom20 * 20 + quantityNom50 * 50 + quantityNom100 * 100 || money < 20 || (money >= 20 && money < 50 && money % 20 != 0) || (money >= 50 && (money % 10 != 0 || money % 100 == 10 || money % 100 == 30)) || (money < 0)) {
             operationIsSuccess = false;
             System.out.println(operationIsSuccess + " - операция не удалась.");
             System.out.println("");
@@ -89,6 +101,12 @@ public class ATM {
                 }
             }
         }
+        return 0;
+    }
+
+    public int showMoney() {
+        System.out.println(quantityNom100 * 100 + quantityNom50 * 50 + quantityNom20 * 20);
+        System.out.println("");
         return 0;
     }
 }
